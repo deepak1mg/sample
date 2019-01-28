@@ -1,0 +1,230 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;\f2\froman\fcharset0 Times-Roman;
+\f3\fswiss\fcharset0 Arial-BoldMT;\f4\fmodern\fcharset0 Courier;\f5\fmodern\fcharset0 Courier-Bold;
+\f6\fmodern\fcharset0 Courier-Oblique;\f7\fswiss\fcharset0 Helvetica-Bold;\f8\fnil\fcharset0 Menlo-Regular;
+\f9\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red16\green102\blue177;\red255\green255\blue255;\red69\green85\blue94;
+\red53\green59\blue76;\red225\green234\blue235;\red13\green16\blue23;\red16\green102\blue177;\red69\green85\blue94;
+\red13\green16\blue23;\red53\green59\blue76;\red225\green234\blue235;\red0\green0\blue0;\red38\green38\blue38;
+\red255\green255\blue255;\red83\green83\blue83;\red13\green95\blue24;\red51\green109\blue125;\red28\green30\blue36;
+\red135\green134\blue154;\red244\green244\blue244;\red59\green68\blue70;\red69\green80\blue83;\red63\green185\blue255;
+\red246\green246\blue246;\red225\green122\blue174;\red218\green172\blue100;}
+{\*\expandedcolortbl;;\cssrgb\c3529\c48235\c74902;\cssrgb\c100000\c100000\c100000;\cssrgb\c34118\c40784\c44314;
+\cssrgb\c27059\c29804\c37255;\cssrgb\c90588\c93333\c93725;\cssrgb\c5490\c7843\c11765;\cssrgb\c3529\c48235\c74902;\cssrgb\c34118\c40784\c44314;
+\cssrgb\c5490\c7843\c11765;\cssrgb\c27059\c29804\c37255;\cssrgb\c90588\c93333\c93725;\cssrgb\c0\c0\c0;\cssrgb\c20000\c20000\c20000;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c40000\c40000\c40000;\cssrgb\c0\c43922\c12549;\cssrgb\c25098\c50196\c56471;\cssrgb\c14510\c15686\c18824;
+\cssrgb\c60000\c60000\c66667;\cssrgb\c96471\c96471\c96471;\cssrgb\c29412\c33725\c34510;\cssrgb\c34118\c38824\c40000;\cssrgb\c29412\c77647\c100000;
+\cssrgb\c97255\c97255\c97255;\cssrgb\c91373\c56863\c73725;\cssrgb\c88627\c72549\c46667;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15060\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl320\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/itertools.html#itertools.product"}}{\fldrslt 
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+itertools.product()}}
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 This tool computes the\'a0{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Cartesian_product"}}{\fldrslt \cf2 cartesian product}}\'a0of input iterables.\
+It is equivalent to nested\'a0for-loops.\
+For example,\'a0
+\f2 \cf5 product(A, B)
+\f1 \cf4 \'a0returns the same as\'a0
+\f2 \cf5 ((x,y) for x in A for y in B)
+\f1 \cf4 .\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f2 \cf5 \cb6 >>> print list(product([1,2,3],[3,4]))\
+[(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)]\
+>>> A = [[1,2,3],[3,4,5]]\
+>>> print list(product(*A))\
+[(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 3), (3, 4), (3, 5)]\
+\
+\pard\pardeftab720\sl560\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/itertools.html#itertools.permutations"}}{\fldrslt 
+\f1\fs28 \cf2 \cb3 itertools.permutations(iterable[, r])}}
+\f1\fs28 \cf4 \cb3 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 This tool returns successive\'a0\'a0length permutations of elements in an iterable.\
+If\'a0\'a0is not specified or is\'a0\cf5 None\cf4 , then\'a0\'a0defaults to the length of the iterable, and all possible full length permutations are generated.\
+Permutations are printed in a lexicographic sorted order. So, if the input iterable is sorted, the permutation tuples will be produced in a sorted order.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs21 \cf7 Sample Code
+\f1\b0\fs28 \cf4 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f2 \cf5 \cb6 >>> from itertools import permutations\
+>>> print permutations(['1','2','3'])\
+<itertools.permutations object at 0x02A45210>\
+>>> print list(permutations(['1','2','3']))\
+[('1', '2', '3'), ('1', '3', '2'), ('2', '1', '3'), ('2', '3', '1'), ('3', '1', '2'), ('3', '2', '1')]\
+>>> print list(permutations(['1','2','3'],2))\
+[('1', '2'), ('1', '3'), ('2', '1'), ('2', '3'), ('3', '1'), ('3', '2')]\
+>>> print list(permutations('abc\'92,3)).    			# basically 3 in this decides how many elements should be in the tuple of the list\
+[('a', 'b', 'c'), ('a', 'c', 'b'), ('b', 'a', 'c'), ('b', 'c', 'a'), ('c', 'a', 'b'), ('c', 'b', 'a')]\
+\
+\pard\pardeftab720\sl560\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/collections.html#collections.Counter"}}{\fldrslt 
+\f1 \cf2 \cb3 collections.Counter()}}
+\f1 \cf4 \cb3 \'a0\cb1 \uc0\u8232 \cb3 A counter is a container that stores elements as dictionary keys, and their counts are stored as dictionary values.
+\f2 \cf7 \cb6 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf5 >>> from collections import Counter\
+>>> \
+>>> myList = [1,1,2,3,4,5,3,2,3,4,2,1,2,3]\
+>>> print Counter(myList)\
+Counter(\{2: 4, 3: 4, 1: 3, 4: 2, 5: 1\})\
+>>>\
+>>> print Counter(myList).items()\
+[(1, 3), (2, 4), (3, 4), (4, 2), (5, 1)]\
+>>> \
+>>> print Counter(myList).keys()\
+[1, 2, 3, 4, 5]\
+>>> \
+>>> print Counter(myList).values()\
+[3, 4, 4, 2, 1]\
+\pard\pardeftab720\sl560\partightenfactor0
+\cf7 \
+\pard\pardeftab720\sl560\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/itertools.html#itertools.combinations"}}{\fldrslt 
+\f1 \cf8 \cb3 \outl0\strokewidth0 \strokec8 itertools.combinations(iterable, r)}}
+\f1 \cf9 \cb3 \outl0\strokewidth0 \strokec9 \'a0\cb1 \uc0\u8232 \cb3 This tool returns the\'a0\'a0length subsequences of elements from the input iterable.\
+Combinations are emitted in lexicographic sorted order. So, if the input iterable is sorted, the combination tuples will be produced in sorted order.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs21 \cf10 \strokec10 Sample Code
+\f1\b0\fs28 \cf9 \strokec9 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f2 \cf11 \cb12 \strokec11 >>> from itertools import combinations\
+>>> \
+>>> print list(combinations('12345',2))\
+[('1', '2'), ('1', '3'), ('1', '4'), ('1', '5'), ('2', '3'), ('2', '4'), ('2', '5'), ('3', '4'), ('3', '5'), ('4', '5')]\
+>>> \
+>>> A = [1,1,3,3,3]\
+>>> print list(combinations(A,4))\
+[(1, 1, 3, 3), (1, 1, 3, 3), (1, 1, 3, 3), (1, 3, 3, 3), (1, 3, 3, 3)]\cf10 \strokec10 \
+\pard\pardeftab720\sl560\partightenfactor0
+\cf7 \cb6 \outl0\strokewidth0 \
+\pard\pardeftab720\sl560\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/itertools.html#itertools.combinations_with_replacement"}}{\fldrslt 
+\f1 \cf8 \cb3 \outl0\strokewidth0 \strokec8 itertools.combinations_with_replacement(iterable, r)}}
+\f1 \cf9 \cb3 \outl0\strokewidth0 \strokec9 \'a0\cb1 \uc0\u8232 \cb3 This tool returns\'a0\'a0length subsequences of elements from the input iterable allowing individual elements to be\'a0repeated more than once.\
+Combinations are emitted in lexicographic sorted order. So, if the input iterable is sorted, the combination tuples will be produced in sorted order.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs21 \cf10 \strokec10 Sample Code
+\f1\b0\fs28 \cf9 \strokec9 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f2 \cf11 \cb12 \strokec11 >>> from itertools import combinations_with_replacement\
+>>> \
+>>> print list(combinations_with_replacement('12345',2))\
+[('1', '1'), ('1', '2'), ('1', '3'), ('1', '4'), ('1', '5'), ('2', '2'), ('2', '3'), ('2', '4'), ('2', '5'), ('3', '3'), ('3', '4'), ('3', '5'), ('4', '4'), ('4', '5'), ('5', '5')]\
+>>> \
+>>> A = [1,1,3,3,3]\
+>>> print list(combinations(A,2))\
+[(1, 1), (1, 3), (1, 3), (1, 3), (1, 3), (1, 3), (1, 3), (3, 3), (3, 3), (3, 3)]\cf10 \strokec10 \
+\pard\pardeftab720\sl560\partightenfactor0
+\cf7 \cb6 \outl0\strokewidth0 \
+Itertools groupby\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf13 \cb3 \outl0\strokewidth0 \strokec13 That behavior differs from SQL\'92s GROUP BY which aggregates common elements regardless of their input order.\
+\pard\pardeftab720\sl312\qj\partightenfactor0
+
+\f4\fs24 \cf14 \cb15 \strokec14 groups \cf16 \strokec16 =\cf14 \strokec14  []\
+uniquekeys \cf16 \strokec16 =\cf14 \strokec14  []\
+data \cf16 \strokec16 =\cf14 \strokec14  \cf17 \strokec17 sorted\cf14 \strokec14 (data, key\cf16 \strokec16 =\cf14 \strokec14 keyfunc)\
+
+\f5\b \cf17 \strokec17 for
+\f4\b0 \cf14 \strokec14  k, g 
+\f5\b \cf17 \strokec17 in
+\f4\b0 \cf14 \strokec14  groupby(data, keyfunc):\
+    groups\cf16 \strokec16 .\cf14 \strokec14 append(\cf17 \strokec17 list\cf14 \strokec14 (g))      
+\f6\i \cf18 \strokec18 # Store group iterator as a list
+\f4\i0 \cf14 \strokec14 \
+    uniquekeys\cf16 \strokec16 .\cf14 \strokec14 append(k)\
+\
+
+\f2\fs28 \cf7 \outl0\strokewidth0 \
+\pard\pardeftab720\sl560\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/2/library/functions.html#zip"}}{\fldrslt 
+\f1 \cf8 \cb3 \outl0\strokewidth0 \strokec8 zip([iterable, ...])}}
+\f1 \cf9 \cb3 \outl0\strokewidth0 \strokec9 \
+This function returns a list of tuples. The\'a0
+\fs21 th
+\fs28 \'a0tuple contains the\'a0
+\fs21 th
+\fs28 \'a0element from each of the argument sequences or iterables.\
+If the argument sequences are of unequal lengths, then the returned list is truncated to the length of the shortest argument sequence.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs21 \cf10 \strokec10 Sample Code
+\f1\b0\fs28 \cf9 \strokec9 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f2 \cf11 \cb12 \strokec11 >>> print zip([1,2,3,4,5,6],'Hacker')\
+[(1, 'H'), (2, 'a'), (3, 'c'), (4, 'k'), (5, 'e'), (6, 'r')]\
+>>> \
+>>> print zip([1,2,3,4,5,6],[0,9,8,7,6,5,4,3,2,1])\
+[(1, 0), (2, 9), (3, 8), (4, 7), (5, 6), (6, 5)]\
+>>> \
+>>> A = [1,2,3]\
+>>> B = [6,5,4]\
+>>> C = [7,8,9]\
+>>> X = [A] + [B] + [C]\
+>>> \
+>>> print zip(*X)\
+[(1, 6, 7), (2, 5, 8), (3, 4, 9)]\cf10 \strokec10 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf7 \cb6 \outl0\strokewidth0 \
+\pard\pardeftab720\sl560\partightenfactor0
+
+\f1\fs24 \cf19 \cb3 setattr(). #
+\f7\b \cf20 sets the value of given attribute of an object.\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f8\b0 \cf19 \cb21 setattr(object, name, value) #object whose value has to be set\
+class Person:\
+    name = 'Adam'\
+p = Person()\
+print('Before modification:', p.name)\
+# setting name to 'John'\
+setattr(p, 'name', 'John')\
+print('After modification:', p.name)\
+\
+Magic methods\
+def __contains__(self,item):\
+	return item in self.value. # __getitem__ or __iter__ can also be used\
+\
+def get_number(self):\
+	for x in self.number:\
+		yield x 	#
+\f4\fs28 \cf22 \cb3 yield
+\f9 \cf23 \'a0lets you send data back out of a function without ending the execution of the function.
+\f8\fs24 \cf19 \cb21 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\f1 \cf19 \cb3  	or direct \
+		yield from self.number:\
+\
+ 	@classmethod \
+\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f2\fs28 \cf24 \cb1 with\cf25  \cf26 open\cf25 (\cf27 "my_file.txt"\cf25 , \cf27 "a"\cf25 ) \cf24 as\cf25  \cf26 file\cf25 :\
+    \cf26 file\cf25 .\cf26 write\cf25 (\cf27 "Hello world"\cf25 )\
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs26 \cf7 \cb6 \
+\pard\pardeftab720\sl420\sa300\partightenfactor0
+
+\f4\fs28 \cf22 \cb3 file.readlines()
+\f9 \cf23 \'a0reads the entire file into a list, with each line as a list item.\
+\pard\pardeftab720\sl500\qc\partightenfactor0
+
+\f2\fs26 \cf7 \cb6 \
+}
